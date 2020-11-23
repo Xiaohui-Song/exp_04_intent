@@ -64,29 +64,30 @@ intent practice
 ## 问题及解决
 <br>  
 1.二工程在AndroidManifest.xml中的<intent-filter>标签下加入<action android:name="android.intent.action.VIEW" />报错如下：<br>  
- ![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/intent_view_error.png)  
- 在添加以下代码后依旧不成功：<br>
- ![solve](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/solve.png)<br>  
- 解决办法：<br>  
- activity标签下重新写一个<intent-filter>:
- ```
+![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/intent_view_error.png)  
+在添加以下代码后依旧不成功：<br>  
+![solve](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/solve.png)<br>  
+解决办法：<br>  
+activity标签下重新写一个<intent-filter>:  
+ 
+```
  <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
  ```  
- <br>  
- 2.访问百度网页报错：<br>  
- ![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/error.png)<br>  
- 解决办法:<br>  
- <manifest>标签下添加访问网络权限:<br>  
-  ```
+ 
+2.访问百度网页报错：<br>  
+![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/error.png)<br>  
+解决办法:<br>  
+<manifest>标签下添加访问网络权限:<br>  
+```
   <uses-permission android:name="android.permission.INTERNET" />
-  
-  ```
-  <application>标签下添加如下代码，启用明文支持如http（Android的系统上面默认所有http的请求都被阻止了）
-  ```
+```  
+<application>标签下添加如下代码，启用明文支持如http（Android的系统上面默认所有http的请求都被阻止了)  
+ 
+```
   android:usesCleartextTraffic="true"
-  ```
+```
   
 
