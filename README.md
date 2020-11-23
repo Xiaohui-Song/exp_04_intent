@@ -5,7 +5,9 @@ intent practice
 <br>
 1.实验要求：一工程用于输入网址，点击后跳转到二工程浏览网页<br>  
 2.一工程通过点击事件，将获取到的url网址通过intent.putExtra传递到二工程<br>  
+
 ```
+
  button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 String url = editText.getText().toString();
