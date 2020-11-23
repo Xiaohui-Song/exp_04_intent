@@ -19,7 +19,6 @@ intent practice
 
         });    
 ```  
-        <br>
 
 3.二工程通过getStringExtra()方法获取到网址后,利用webview来展示加载网页<br>  
 ```
@@ -43,8 +42,8 @@ intent practice
            }
 
         });
-```
-<br>  
+```  
+
 4.Android WebView组件加载网页发生证书认证错误时，会调用WebViewClient类的onReceivedSslError方法
 ，方法内调用handler.proceed()来忽略该证书错误<br>  
 ```
@@ -57,7 +56,7 @@ intent practice
             }
         });
 ```  
-<br>  
+
 实验最终结果如下图:<br>    
 ![1](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/web.png)<br>  
 ![2](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/visit.png)<br>  
