@@ -16,7 +16,7 @@ intent practice
             }
 
         });    
-        ```  
+```  
         <br>
 
 3.二工程通过getStringExtra()方法获取到网址后,利用webview来展示加载网页<br>  
@@ -46,6 +46,7 @@ intent practice
 4.Android WebView组件加载网页发生证书认证错误时，会调用WebViewClient类的onReceivedSslError方法
 ，方法内调用handler.proceed()来忽略该证书错误<br>  
 ```
+
  webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onReceivedSslError(WebView view,SslErrorHandler handler, SslError error) {
@@ -55,7 +56,36 @@ intent practice
         });
 ```  
 <br>  
-## 实验结果  
-[1]
+实验最终结果如下图:<br>    
+![1](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/web.png)<br>  
+![2](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/visit.png)<br>  
 
+## 问题及解决
+<br>  
+1.二工程在AndroidManifest.xml中的<intent-filter>标签下加入<action android:name="android.intent.action.VIEW" />报错如下：<br>  
+ ![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/intent_view_error.png)  
+ 在添加以下代码后依旧不成功：<br>
+ ![solve](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/solve.png)<br>  
+ 解决办法：<br>  
+ activity标签下重新写一个<intent-filter>:
+ ```
+ <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+ ```  
+ <br>  
+ 2.访问百度网页报错：<br>  
+ ![error](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/error.png)<br>  
+ 解决办法:<br>  
+ <manifest>标签下添加访问网络权限:<br>  
+  ```
+  <uses-permission android:name="android.permission.INTERNET" />
+  
+  ```
+  <application>标签下添加如下代码，启用明文支持如http（Android的系统上面默认所有http的请求都被阻止了）
+  ```
+  android:usesCleartextTraffic="true"
+  ```
+  
 
