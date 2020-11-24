@@ -57,7 +57,8 @@ intent practice
         });
 ```  
 
-实验最终结果如下图:<br>    
+实验最终结果如下图:<br>   
+
 ![1](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/web.png)<br>  
 ![2](https://github.com/Xiaohui-Song/exp_04_intent/blob/main/pic4/visit.png)<br>  
 
